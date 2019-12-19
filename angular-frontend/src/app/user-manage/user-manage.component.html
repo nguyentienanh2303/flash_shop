@@ -1,0 +1,49 @@
+<div class="container" style="padding: 10px; margin: 0">
+
+
+
+<!-- <button type="button" class="btn btn-primary" style="display: block;margin-left: auto; margin-top: 30px;" (click)="onLogout()">Đăng Xuất</button> -->
+  <div class="card">
+    <div class="card-header text-center">Quản Lý Tài Khoản</div>
+    <br>
+ 
+    <div class="card-body" style="padding: 5px">
+        <button type="button" class="btn btn-primary" routerLink="/sign-up">ADD USER</button>
+        <br><br>
+
+    	<table class="table table-inverse"  border="1" cellpadding="5" >
+    		<thead>
+    			<tr>
+    				<th>#</th>
+    				<th>Email</th>
+                    <th>PassWord</th>
+    				<th>Phone</th>
+    				<th>FirstName</th>
+    				<th>LastName</th>
+    				<th>Adrees</th>
+                    <th>Action</th>
+    			</tr>
+    		</thead>
+    		<tbody>
+
+    			<tr *ngFor="let item of users; index as i">
+    				<td>{{i+1}}</td>
+    				<td>{{item.email}}</td>
+                    <td>{{item.passWord}}</td>
+    				<td>{{item.phone}}</td>
+    				<td>{{item.firstName}}</td>
+    				<td>{{item.lastName}}</td>
+    				<td>{{item.adress}}</td>
+    				
+                    <td>
+                        <form class="form-inline">
+                            <button type="button" class="btn btn-success form-control" routerLink="/admin/user-manage/{{item.id}}/edit">Edit</button>
+                            <button type="button" class="btn btn-danger form-control" (click)="onDelete(item.id)">Delete</button>
+                        </form>
+                    </td>
+    			</tr>
+    		</tbody>
+    	</table>
+    </div>
+  </div>
+</div>

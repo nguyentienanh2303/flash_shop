@@ -1,0 +1,42 @@
+#end-container{
+  padding: 30px 120px;
+  border-top: 1px solid #ebebeb;
+  background: #F9F9F9;
+  color: #444444;
+
+}
+#end-container .icon{
+  height: 100%;
+  margin-top: 15px;
+  margin-right: 20px;
+}
+
+.content_row span{
+margin-top: 5px;
+font-size: 13;
+
+}
+.end-footer{
+  background: #343a40;
+}
+/*==Footer==*/
+.end-footer{
+  color: rgba(255,255,255,.5);
+}
+.menu-footer{
+
+  text-align: left;
+  padding: 40px 50px;
+}
+.menu-footer p{
+
+}
+#end {
+ font-size: 80%;
+
+ color: #838383;
+ padding: 1em 3em;
+}
+.bando{
+padding-top: 15px;
+}

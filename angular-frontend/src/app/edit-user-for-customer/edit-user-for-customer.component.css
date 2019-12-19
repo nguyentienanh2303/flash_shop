@@ -1,0 +1,18 @@
+.container{
+  padding: 20px;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: 1.1rem;
+    margin-top: 30px;
+    margin-bottom : 30px;
+}
+
+.form-group span{
+    width: 100%;
+    margin-top: .15rem;
+    margin-left: 0.5rem;
+    font-size: 80%;
+    color: #dc3545;
+}
+button{
+    border-radius: 20px;
+}

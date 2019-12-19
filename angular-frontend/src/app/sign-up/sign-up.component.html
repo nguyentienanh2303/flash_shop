@@ -1,0 +1,190 @@
+
+<div class="_container">
+    <div class="row">
+        <div class="col-sm-5 col-10">
+            <div class="title">
+                <h1 >Signup</h1>
+            </div>
+            <div>
+                <form 
+                (ngSubmit)="onSubmit(formSignUp)" 
+                #formSignUp="ngForm">
+                <div class="form-group">
+                    <label for="firstname">First Name:</label>
+                    <br>
+                    <input 
+                    class="form-control" 
+                    type="text" 
+                    #txtFirstName="ngModel"
+                    [(ngModel)]="user.firstName"
+                    name="firstname" 
+                    placeholder="Enter Firstname" 
+                    required
+                    >
+                    <span *ngIf="txtFirstName.touched && txtFirstName?.errors?.required ">
+                    vui lòng nhập First Name
+                    </span>
+                    </div>
+
+
+                <div class="form-group">
+                    <label for="lastname">Last Name:</label>
+                    <br>
+                    <input 
+                    class="form-control" 
+                    type="text" 
+                    #txtLastName="ngModel"
+                    [(ngModel)]="user.lastName"
+                    name="lastname" 
+                    placeholder="Enter Lastname" 
+                    required
+                    >
+                    
+                    <span *ngIf="txtLastName.touched && txtLastName?.errors?.required ">
+                    vui lòng nhập Last Name
+                    </span>
+                    </div>
+
+
+                <div class="form-group">
+                    <label for="adress">Adress:</label>
+                    <br>
+                    <input 
+                    class="form-control" 
+                    type="text" 
+                    #txtAdress="ngModel"
+                    [(ngModel)]="user.adress"
+                    name="adress" 
+                    placeholder="Enter Adress" 
+                    required
+                    >
+                    
+                    <span *ngIf="txtAdress.touched && txtAdress?.errors?.required ">
+                    vui lòng nhập Adress
+                    </span>
+                    </div>
+
+
+                <div class="form-group">
+                    <label for="adress">Phone Number:</label>
+                    <br>
+                    <input 
+                    class="form-control" 
+                    type="text" 
+                    #txtPhone="ngModel"
+                    [(ngModel)]="user.phone"
+                    name="phone" 
+                    placeholder="Enter Phone Number" 
+                    required
+                    pattern="[0-9]+"
+                    minlength="10"
+                    maxlength="11" 
+                    >
+                    
+                    <span *ngIf="txtPhone.touched && txtPhone?.errors?.required ">
+                    vui lòng nhập Phone Number
+                    </span>
+
+                    <span *ngIf="txtPhone?.errors?.minlength||txtPhone?.errors?.maxlength||txtPhone?.errors?.pattern ">
+                    Phone Number phải là dãy số độ dài 10 hoặc 11
+                    </span>
+
+
+                    </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <br>
+                    <input 
+                    class="form-control" 
+                    type="text" 
+                    #txtEmail="ngModel"
+                    [(ngModel)]="user.email"
+                    name="email" 
+                    placeholder="Enter email" 
+                    required
+                    email
+                    >
+                    
+                    <span *ngIf="txtEmail.touched && txtEmail?.errors?.required ">
+                    vui lòng nhập email
+                    </span>
+                    <span *ngIf="txtEmail.touched && txtEmail?.errors?.email">
+                    email chưa đúng định dạng
+                    </span>
+                    </div>
+
+                    
+
+                <div class="form-group">
+                    <label for="password">Password:</label><br>
+                    <input 
+                    class="form-control" 
+                    type="password" 
+                    [(ngModel)]="user.passWord"
+                    name="password" 
+                    #txtPassword="ngModel"
+                    placeholder="Enter password" 
+                    required
+                    minlength="6" 
+                    >
+
+                    <span *ngIf="txtPassword?.errors?.minlength">
+                    mật khẩu tối thiểu 6 ký tự
+                    </span>
+                     
+                     <br>
+                    <p class="text-danger" *ngIf="checkUser&&formSignUp?.submitted">
+                    Email đã tồn tại
+                    </p>
+
+                    <p class="text-success" *ngIf="(!checkUser)&&formSignUp?.submitted">
+                    Đăng ký thành công
+                    </p>
+
+                    </div>
+              
+                  <button type="submit" class="btn btn-primary" [disabled]="formSignUp.invalid"
+                  data-toggle="modal" data-target="#myModal"  >Get Started For Free</button>
+                  <br>
+                  <a routerLink="/login"> Already have an account?</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Button to Open the Modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  Open modal
+</button> -->
+
+<!-- The Modal -->
+<div class="modal" id="myModal" *ngIf="showAlert">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title"></h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+      <div class="modal-body text-success text-center" *ngIf="payed && payed!=null">
+        <h3> Đăng ký thành công</h3>
+      </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal" (click)="goLogin()">OK</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+    
+</div>

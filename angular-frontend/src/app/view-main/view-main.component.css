@@ -1,0 +1,147 @@
+/* You can add global styles to this file, and also import other style files */
+._container_{
+/*padding: 30px 50px;*/
+max-width: 90%;
+margin: auto;
+}
+
+
+.content_row span{
+margin-top: 5px;
+font-size: 13;
+
+}
+
+/*product home */
+.product-home{
+  margin-left: 10px;
+}
+.product-home .pro-head{
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+.product-home .pro-head .title{
+
+  background-color: #ff9300;
+  /*background-image: url('assets/img/8.jpg'); lỗi*/
+  background-repeat: no-repeat;
+  background-position: right center;
+  display: block;
+  max-width: 20%;
+  min-width: 200px;
+  padding-left: 20px;
+
+}
+.title h3 a{
+color: white;
+line-height: 40px;
+text-decoration: none;
+}
+.title h3 a:hover{
+color: black;
+ transition-property: color;
+ transition-duration: 1.5s;
+}
+.card-group{
+  margin: 1.5em auto;
+  margin-bottom: 10px;
+}
+.card{
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 20px;
+  text-align: center;
+  border: 5px solid #f5f5f5;
+  background-color: #fff;
+  margin-bottom: 20px;
+  float: left;
+
+
+  }
+
+
+@media all and (min-width: 576px) {
+   .card{ 
+      min-width: 25%;
+      max-width: 25%;
+   }
+} 
+
+
+
+@media all and (max-width: 768px) {
+   .card{ 
+      min-width: 50%;
+      max-width: 50%;
+   }
+}
+
+@media all and (max-width: 576px) {
+   .card{ 
+      min-width: 100%;
+      max-width: 100%;
+      min-width: 300px;
+   }
+} 
+.card .p-img{
+  height: 220px;
+  max-width: 100%;
+  position: relative;
+}
+.p-img img{
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+ transition-duration: 1s;
+  /* Safari & Google Chrome */
+  -webkit-transition-duration: 1s; 
+  /* Mozilla Firefox */
+  -moz-transition-duration: 1s; 
+  /* Opera */
+  -o-transition-duration: 1s;
+  /* IE 9 */
+  -ms-transition-duration: 1s;
+}
+.p-img img:hover{
+
+    transform: scale(0.8);
+    /* Safari & Google Chrome */
+    -webkit-transform: scale(0.8);
+    /* Mozilla Firefox */
+    -moz-transform: scale(0.8); 
+    /* Opera */
+    -o-transform: scale(0.8);
+    /* IE 9 */
+    -ms-transform: scale(0.8);
+}
+
+.p-emtry a{
+font-size: 20px;
+color: #f5911d;
+margin-bottom: 8px;
+display: inline-block;
+min-height: 88.8px;
+
+}
+.p-summary{
+  font-size: 13px;
+  display: block;
+  margin-bottom: 20px;
+  display: block;
+  
+}
+.p-price{
+  display: inline-block;
+    background-color: #ff9300;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0px 20px;
+    line-height: 33px;
+    border-radius: 100px;
+}

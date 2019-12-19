@@ -1,0 +1,50 @@
+
+<div class="container" style="padding: 10px; margin: 0">
+
+<!-- <button type="button" class="btn btn-primary" style="display: block;margin-left: auto; margin-top: 30px;" (click)="onLogout()">Đăng Xuất</button> -->
+  <div class="card">
+    <div class="card-header text-center">Quản Lý Sản Phẩm</div>
+    <br>
+    <div class="btn-group" >
+        <button type="button" class="btn btn-info" (click)="loadData()">Tất cả sản phẩm</button>
+        <button type="button" class="btn btn-info" (click)="filter('SSD')">SSD</button>
+        <button type="button" class="btn btn-info" (click)="filter('RAM')">RAM</button>
+        <button type="button" class="btn btn-info" (click)="filter('CPU')">CPU</button>
+    </div>
+    <br>
+    <hr>
+    <div class="card-body" style="padding: 5px">
+        <button type="button" class="btn btn-primary" routerLink="/admin/productmanage/add">ADD PRODUCT</button>
+        <br><br>
+
+    	<table class="table table-inverse"  border="1" cellpadding="5" >
+    		<thead>
+    			<tr>
+    				<th>#</th>
+    				<th>Name</th>
+    				<th>Image</th>
+    				<th>Summary</th>
+    				<th>Price</th>
+                    <th>Action</th>
+    			</tr>
+    		</thead>
+    		<tbody>
+
+    			<tr *ngFor="let item of products; index as i">
+    				<td>{{i+1}}</td>
+    				<td>{{item.name}}</td>
+    				<td><img style="max-width: 60px" [src]="item.linkImg"></td>
+    				<td>{{item.summary}}</td>
+    				<td>{{item.price}}đ</td>
+                    <td>
+                        <form class="form-group">
+                            <button type="button" class="btn btn-success form-control" routerLink="/admin/productmanage/{{item.id}}/edit">Edit</button>
+                            <button type="button" class="btn btn-danger form-control" (click)="onDelete(item.id)">Delete</button>
+                        </form>
+                    </td>
+    			</tr>
+    		</tbody>
+    	</table>
+    </div>
+  </div>
+</div>

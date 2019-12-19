@@ -1,0 +1,14 @@
+<div class="p-item col-sm-6 col-md-3" >
+          <div class="p-img">
+             <a routerLink="/product-detail/{{id}}"><img [src]="linkImg"></a>
+          </div>
+          <div class="p-emtry">
+              <a routerLink="/product-detail/{{id}}">{{name}}</a>
+            <span class="p-summary">
+              {{summary}}
+            </span>
+            <span class="p-price">
+              {{price|VNDONG}}đ
+            </span>
+          </div>
+      </div>

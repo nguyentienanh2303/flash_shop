@@ -1,0 +1,97 @@
+ 
+  <div class="menu">
+    <nav style="background: #ededed">
+      <div class="row" style=" line-height: 60px">
+        <div class="col-sm-4 mr-auto"><a style="color: black" id="logo" routerLink=""><h2 style="line-height: 60px; padding-left: 40px; font-family: Monotype Corsiva">Flash Shop</h2></a></div>
+        <div class="col-sm-6 col-md-4 ml-auto">
+          <div>
+                <a  (click)="goCart()" id="gocart" style="margin-left: 20px;display: inline-block;"><span><img style="width: 25px;margin-left: 10px " src="assets/img/giohang.jpg"></span>
+                <span class="badge badge-pill badge-warning" style="width: 25px;margin-left: 2px;">{{countProduct}}</span>
+                </a>
+
+
+              <ng-container *ngIf="!logged">     
+                <a  routerLink="/login" style="margin-left: 40px;display: inline-block">
+                   Đăng nhập
+                </a>    
+              </ng-container>
+
+              <ng-container *ngIf="logged">     
+               <!--  <a  routerLink="manage-user-for-customer/{{userId}}/edit" style="margin-left: 20px;display: inline-block;color: #007bff">
+                  chào {{userName|titlecase}}
+                </a>     -->
+                
+                <div class="dropdown" style="display: inline">
+                   <a class="dropdown-toggle" data-toggle="dropdown"  style="margin-left: 40px;display: inline-block; cursor: pointer;color: #007bff;">
+                  chào {{userName|titlecase}}
+                   </a>    
+                
+                  <div class="dropdown-menu" style="background: #ededed ">
+                    <a class="dropdown-item" routerLink="manage-user-for-customer/{{userId}}/edit" style="color: #007bff;">Thông tin tài khoản</a>
+                    <a class="dropdown-item" routerLink="view-list-cart" style="color: #007bff;">Đơn hàng</a>
+                  </div>
+                </div>
+              
+
+              </ng-container>
+
+
+                <ng-container *ngIf="logged">
+                <a  routerLink="" (click)="logout()" style="margin-left: 40px;display: inline-block">Đăng xuất</a>
+              </ng-container>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="wrap-box" style="padding: 2px;background-image: url('assets/icon/strip.png')"></div>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark " >
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+      </li>
+        <a class="nav-link" routerLink="">Trang chủ</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Sản phẩm
+        </a>
+        <div class="dropdown-menu " >
+          <a class="dropdown-item " routerLink='/cpu'>CPU</a>
+          <a class="dropdown-item " routerLink='/ram'>Ram</a>
+          <a class="dropdown-item " routerLink='/ssd'>Ổ Cứng SSD</a>
+          <a class="dropdown-item " routerLink="">Nguồn</a>
+          <a class="dropdown-item " routerLink="">Màn Hình</a>
+        </div>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/about-us">Giới thiệu</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/contact">Liên hệ</a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" routerLink="/shopping-cart">Giỏ hàng</a>
+      </li> -->
+      <!-- <li class="nav-item">
+        <a class="nav-link" routerLink="/sign-up">Đăng Ký</a>
+      </li> -->
+      <!-- <li class="nav-item">
+        <a class="nav-link" routerLink="/login">Đăng nhập</a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login-admin">Admin</a>
+      </li>
+
+      
+    </ul>
+      <div >
+         <form class="form-inline timkiem "  action="" >
+           <input class="form-control mr-sm-2" type="text"  [(ngModel)]="keySearch" [ngModelOptions]="{standalone: true}" placeholder="Search">
+           <button class="btn btn-success" type="submit" routerLink="/search-product/{{keySearch}}" (click)="keySearch=''" >Search</button>
+         </form>
+      </div>
+    </div>
+  </nav>
+</div>
+<!--menu-->

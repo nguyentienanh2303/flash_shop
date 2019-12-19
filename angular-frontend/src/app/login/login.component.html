@@ -1,0 +1,71 @@
+<div class="_container">
+    <div class="row">
+        <div class="col-sm-5 col-10">
+            <div class="title">
+                <h1 >Login</h1>
+            </div>
+            <div>
+                <form 
+                (ngSubmit)="onSubmit(formSignIn)" 
+                #formSignIn="ngForm">
+                
+                  <div class="form-group">
+                    <label for="email">Email:</label>
+                    <br>
+                    <input 
+                    class="form-control" 
+                    type="text" 
+                    #txtEmail="ngModel"
+                    [(ngModel)]="user.email"
+                    name="email" 
+                    placeholder="Enter email" 
+                    required
+                    email
+                    >
+                    
+                    <span *ngIf="txtEmail.touched && txtEmail?.errors?.required ">
+                    vui lòng nhập email
+                    </span>
+                    <span *ngIf="txtEmail.touched && txtEmail?.errors?.email">
+                    email chưa đúng định dạng
+                    </span>
+                    </div>
+
+                    
+
+                    <div class="form-group">
+                    <label for="password">Password:</label><br>
+                    <input 
+                    class="form-control" 
+                    type="password" 
+                    [(ngModel)]="user.passWord"
+                    name="password" 
+                    #txtPassword="ngModel"
+                    placeholder="Enter password" 
+                    required
+                    minlength="6" 
+                    >
+
+                    <span *ngIf="txtPassword?.errors?.minlength">
+                    mật khẩu tối thiểu 6 ký tự
+                    </span>
+                     
+                    <br>
+                    <p class="text-danger" *ngIf="!checkUser">
+                    Sai mật khẩu hoặc tài khoản
+                    </p>
+
+                    </div>
+                    <br>
+              
+                  <button type="submit" class="btn btn-primary" [disabled]="formSignIn.invalid" >Login</button>
+                  <br>
+                  <p>Don't have account?
+                    <a routerLink="/sign-up"> Sign up here</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</div>
+ 

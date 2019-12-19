@@ -1,0 +1,24 @@
+<!--  <div class="container" style="padding: 10px">
+  <div class="list-group" style="padding-top: 30px">
+  <a  routerLink="/admin/productmanage" class="list-group-item list-group-item-action">Quản Lý Sản Phẩm</a>
+  <a routerLink="/admin/user-manage" class="list-group-item list-group-item-action">Quản Lý User</a>
+  <a routerLink="/admin/cart-manage" class="list-group-item list-group-item-action">Quản Lý Đơn Hàng</a>
+  <a (click)="onLogout()" style="cursor: pointer;" class="list-group-item list-group-item-action">Đăng Xuất</a>
+  </div>
+</div>
+  <router-outlet></router-outlet>
+ -->
+<div class="row" >
+	<div class="col-md-2">
+		  <div class="list-group" style="margin-top: 15px; height: 100% ;border-right: rgba(0,0,0,.03) solid 2px">
+			  <a  routerLink="/admin/productmanage" class="list-group-item list-group-item-action">Quản Lý Sản Phẩm</a>
+			  <a routerLink="/admin/user-manage" class="list-group-item list-group-item-action">Quản Lý User</a>
+			  <a routerLink="/admin/cart-manage" class="list-group-item list-group-item-action">Quản Lý Đơn Hàng</a>
+			  <a (click)="onLogout()" style="cursor: pointer;" class="list-group-item list-group-item-action">Đăng Xuất</a>
+		  </div>
+	</div>
+	  <div class="col-md-10">
+	  	  <router-outlet></router-outlet>
+	  </div>
+ </div>
+

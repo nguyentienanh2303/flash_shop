@@ -1,0 +1,32 @@
+<div class="_container_">
+<div class="product-home">
+  <div class="pro-container">
+    <div class="pro-head">
+      <div class="title" style="background-image: url('assets/img/8.jpg')">
+        <h3><a href="#">SSD</a></h3>
+      </div>
+    </div>
+
+
+    <div class="card-group">
+        <ng-container *ngFor="let product of products">
+          <div class="card ">
+              <div class="p-img">
+                 <a routerLink="/product-detail/{{product.id}}"><img src={{product.linkImg}}></a>
+              </div>
+              <div class="p-emtry">
+                  <a routerLink="/product-detail/{{product.id}}">{{product.name}}</a>
+                  <span class="p-summary">
+                    {{product.summary}}
+                  </span>
+                  <span class="p-price">
+                    {{product.price | VNDONG}}
+                  </span>
+              </div>
+          </div>
+        <div style="clear: both;"></div>
+      </ng-container>
+      </div>
+</div>
+</div>
+</div>
